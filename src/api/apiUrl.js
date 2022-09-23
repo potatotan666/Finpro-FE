@@ -1,5 +1,4 @@
-// const apiBaseUrl = "http://localhost:3001";
-const apiBaseUrl = "https://shrouded-fortress-82657.herokuapp.com";
+const apiBaseUrl = "http://localhost:3001";
 
 export const apiUrl = {
   getAllRecipes: `${apiBaseUrl}/recipe`,
