@@ -1,0 +1,20 @@
+.footer-container {
+  $primary-color: #B5CB9F;
+  $secondary-color: #f16c13;
+  $light-color: #ffffff;
+  $dark-color: #2c2222;
+
+  width: 100%;
+  height: auto;
+  min-height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-color;
+
+  & > p.footer-text {
+    margin: 0;
+    color: $light-color;
+    text-align: center;
+  }
+}

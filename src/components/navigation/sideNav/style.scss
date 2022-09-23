@@ -1,0 +1,161 @@
+@import url('http://fonts.cdnfonts.com/css/bauhaus-modern');
+
+.side-navbar-container {
+  $primary-color: #B5CB9F;
+  $secondary-color: #9fcb9f;
+  $light-color: #ffffff;
+  $dark-color: #000000;
+  $border-color: #c4d5b3;
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  left: -300%;
+
+  & > .backdrop {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: none;
+    opacity: 0;
+    animation-name: dark-screen;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+    @keyframes dark-screen {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+
+  & > .content {
+    width: 260px;
+    height: 100vh;
+    background-color: $primary-color;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 20%);
+    right: -300%;
+    display: flex;
+    float: right;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    transition: all 0.3s ease-in-out;
+    z-index: 101;
+
+    & > .toggle-container {
+      width: 100%;
+      height: auto;
+      display: flex;
+      padding: 10px 10px;
+      position: absolute;
+
+      & > button.btn-close {
+        width: auto;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $light-color;
+        background: transparent;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+    }
+
+    & > .content-line {
+      width: calc(100% - 30px);
+      height: 1px;
+      background-color: $light-color;
+    }
+
+    & > .content-title {
+      margin: 0px;
+      padding: 15px 0px;
+      width: 100%;
+      height: 85px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+
+      & > a.title {
+        width: 100%;
+        height: auto;
+        background: transparent;
+        text-decoration: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 0px;
+        cursor: pointer;
+        font-size: clamp(2.5rem, 4vw, 3rem);
+        font-family: 'Bauhaus Modern', sans-serif;
+                                                
+        color: $light-color;
+      }
+    }
+
+    & > .content-items {
+      width: 100%;
+      height: auto;
+      background: transparent;
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+
+      & > a.item {
+        width: 230px;
+        height: 50px;
+        background-color: $secondary-color;
+        margin: 10px 15px 0px;
+        padding: 0 10px;
+        text-decoration: none;
+        border-radius: 3px;
+        color: $light-color;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+
+        & > p {
+          font-size: 1rem;
+          margin: 0px 10px;
+        }
+      }
+    }
+  }
+}
+
+.side-navbar-container.open {
+  left: 0;
+
+  & > .backdrop {
+    display: flex;
+    opacity: 1;
+  }
+
+  & > .content {
+    right: 0;
+  }
+}

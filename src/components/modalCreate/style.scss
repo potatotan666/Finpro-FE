@@ -1,0 +1,63 @@
+form.create-recipe {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & > .item {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    & > label {
+      width: 25%;
+      min-width: 75px;
+      height: auto;
+      display: flex;
+      margin-right: auto;
+    }
+
+    & > .input-container {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+
+      & > .input-group-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        & > .input-list {
+          margin: 0 0 10px 0;
+        }
+
+        & > .btn-cancel {
+          margin: 0 0 10px 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+.input-cooking-time {
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: calc(100% / 3);
+  }
+}
+

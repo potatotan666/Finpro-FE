@@ -1,0 +1,249 @@
+@import url('http://fonts.cdnfonts.com/css/bauhaus-modern');
+
+.register-container {
+  $primary-color: #B5CB9F;
+  $secondary-color: #9fcb9f;
+  $tertiary-color: #ffffff;
+  $light-color: #ffffff;
+  $dark-color: #000000;
+
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  position: absolute;
+  background-color: $light-color;
+  overflow: hidden;
+
+  & > .page-container {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & > .page-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url("../../../images/register-bg.webp");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: auto;
+      margin-top: 80px;
+
+      & > .card {
+        width: 400px;
+        height: auto;
+        background-color: $primary-color;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+        margin: 15px;
+        margin-top: 150px;
+
+        @media screen and (min-width: 768px) {
+          margin-top: 15px;
+        }
+
+        & > .card-header {
+          width: 100%;
+          height: 130px;
+          display: flex;
+          justify-content: center;
+          padding: 0 20px;
+
+          & > .card-header-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: $secondary-color;
+            border-radius: 8px;
+            margin-top: -30px;
+            box-shadow: 0 5px 10px rgb(0 0 0 / 25%);
+
+            & > p.card-title {
+              margin: 5px;
+              color: $light-color;
+              font-size: 3rem;
+              font-weight: bold;
+              font-family: 'Bauhaus Modern', sans-serif;
+            }
+
+            & > p.card-header-text {
+              margin: 5px;
+              color: $light-color;
+              font-size: 1rem;
+            }
+          }
+        }
+
+        & > .card-body {
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+          margin-top: -20px;
+
+          & > spin-container {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          & > form {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            & > .item {
+              width: 100%;
+              display: grid;
+              grid-template-columns: 7% 93%;
+              margin: 15px 0;
+              padding: 5px 0;
+              border-bottom: 1px solid $tertiary-color;
+              position: relative;
+
+              &::after,
+              &::before {
+                content: "";
+                position: absolute;
+                bottom: -2px;
+                width: 0;
+                height: 1px;
+                background-color: $secondary-color;
+                transition: 0.3s;
+              }
+
+              &::after {
+                right: 50%;
+              }
+
+              &::before {
+                left: 50%;
+              }
+
+              & > .icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.3s;
+                color: $tertiary-color;
+              }
+
+              & > div {
+                position: relative;
+                height: 35px;
+
+                & > p {
+                  margin: 0;
+                  position: absolute;
+                  left: 10px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  color: $tertiary-color;
+                  transition: 0.3s;
+                  font-size: 16px;
+                }
+
+                & > input {
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  border: none;
+                  outline: none;
+                  background: none;
+                  padding: 0.2rem 0.7rem;
+                  font-size: 16px;
+                  color: $light-color;
+                }
+
+                & > input:-webkit-autofill,
+                & > input:-webkit-autofill:hover,
+                & > input:-webkit-autofill:focus,
+                & > input:-webkit-autofill:active {
+                   -webkit-box-shadow: 0 0 0 30px $primary-color inset !important;
+                  -webkit-text-fill-color: $light-color !important;
+                }
+              }
+            }
+
+            & > .item.focus {
+              &::after,
+              &::before {
+                width: 50%;
+              }
+
+              & > .icon {
+                color: $light-color;
+              }
+
+              & > div p {
+                top: -5px;
+                font-size: 12px;
+                color: $light-color;
+              }
+            }
+
+            & > button {
+              width: 100%;
+              height: 50px;
+              border: none;
+              background: $secondary-color;
+              color: $light-color;
+              font-size: 1.2rem;
+              font-weight: bold;
+              border-radius: 6px;
+              margin: 20px 0 10px;
+              box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+              cursor: pointer;
+              transition: all 0.2s ease-in-out;
+
+              @media screen and (min-width: 768px) {
+                &:hover {
+                  box-shadow: 0 5px 10px rgb(0 0 0 / 30%);
+                  transition: all 0.2s ease-in-out;
+                }
+              }
+            }
+
+            & > .error-msg {
+              margin-top: -10px;
+              margin-left: 20px;
+              width: 100%;
+              height: auto;
+              display: flex;
+              align-items: center;
+              color: red;
+
+              & > p {
+                margin: 0;
+                font-size: 12px;
+              }
+            }
+
+            & > p {
+              margin: 0 0 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

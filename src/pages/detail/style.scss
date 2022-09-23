@@ -1,0 +1,316 @@
+.recipe-detail-container {
+  $primary-color: #B5CB9F;
+  $secondary-color: #9fcb9f;
+  $light-color: #ffffff;
+  $dark-color: #000000;
+  $star-color: #d0d7e0;
+  $star-active-color: #ffd700;
+
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  position: absolute;
+  background-color: $light-color;
+
+  & > .page-container {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & > .page-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      & > .content-body {
+        width: 100%;
+        height: auto;
+        margin-inline: auto;
+        padding-inline: 10px;
+        margin-bottom: 30px;
+        margin-top: 106px;
+        background-color: transparent;
+        z-index: 3;
+
+        @media screen and (min-width: 375px) {
+          padding-inline: 20px;
+        }
+
+        @media screen and (min-width: 425px) {
+          padding-inline: 30px;
+        }
+
+        @media screen and (min-width: 1100px) {
+          width: 960px;
+          padding-inline: 0;
+        }
+
+        @media screen and (min-width: 1440px) {
+          width: 1080px;
+          padding-inline: 0;
+        }
+
+        & > .card-content {
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 15px;
+          background-color: $light-color;
+          box-shadow: rgb(0 0 0 / 10%) 0px 0px 15px;
+          border-radius: 0.25rem;
+
+          & > .card-header {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0px;
+
+            & > div.img-container {
+              width: 250px;
+              height: 250px;
+              background-color: $light-color;
+              border-radius: 0.5rem;
+              border: 5px solid $primary-color;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-shadow: rgb(0 0 0 / 20%) 0px 0px 15px;
+              user-select: none;
+              -webkit-tap-highlight-color: transparent;
+
+              & > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0.2rem;
+              }
+            }
+
+            & > div.skeleton-img-container {
+              width: 250px;
+              height: 250px;
+              border-radius: 0.5rem;
+              animation: skeleton-loading 1s linear infinite alternate;
+
+              @keyframes skeleton-loading {
+                0% {
+                  background-color: hsl(200, 20%, 70%);
+                }
+
+                100% {
+                  background-color: hsl(200, 20%, 95%);
+                }
+              }
+            }
+
+            & > div.name-container {
+              width: 100%;
+              height: auto;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              margin-top: 20px;
+
+              & > h1 {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: inherit;
+                text-align: center;
+              }
+
+              & > div.skeleton-title {
+                width: 250px;
+                height: 1.5rem;
+                margin-bottom: 12px;
+                border-radius: 1rem;
+                animation: skeleton-loading 1s linear infinite alternate;
+
+                @keyframes skeleton-loading {
+                  0% {
+                    background-color: hsl(200, 20%, 70%);
+                  }
+
+                  100% {
+                    background-color: hsl(200, 20%, 95%);
+                  }
+                }
+              }
+
+              & > p {
+                font-size: 1rem;
+                color: inherit;
+                text-align: center;
+                margin-bottom: 5px;
+              }
+
+              & > div.skeleton-text {
+                width: 180px;
+                height: 1rem;
+                margin-bottom: 5px;
+                border-radius: 1rem;
+                animation: skeleton-loading 1s linear infinite alternate;
+
+                @keyframes skeleton-loading {
+                  0% {
+                    background-color: hsl(200, 20%, 70%);
+                  }
+
+                  100% {
+                    background-color: hsl(200, 20%, 95%);
+                  }
+                }
+              }
+
+              & > .name-footer {
+                width: auto;
+                height: auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                & > .time {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-inline-end: auto;
+                  display: flex;
+                  margin: 0 10px;
+
+                  & > p.time {
+                    margin: 0;
+                    font-size: 14px;
+                  }
+                }
+
+                & > .rating {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-inline-start: auto;
+                  display: flex;
+                  color: orange;
+                  margin: 0 10px;
+
+                  & > p.rating {
+                    margin: 0;
+                    font-size: 14px;
+                    color: black;
+                  }
+                }
+
+                & > div.skeleton-footer {
+                  width: 55px;
+                  height: 14px;
+                  margin: 0 10px;
+                  border-radius: 1rem;
+                  animation: skeleton-loading 1s linear infinite alternate;
+
+                  @keyframes skeleton-loading {
+                    0% {
+                      background-color: hsl(200, 20%, 70%);
+                    }
+
+                    100% {
+                      background-color: hsl(200, 20%, 95%);
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          & > .card-body {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            margin-inline: 0;
+
+            & > div.skeleton-list-item {
+              width: 100%;
+              height: 50px;
+              border-radius: 0.3rem;
+              margin-bottom: 15px;
+              animation: skeleton-loading 1s linear infinite alternate;
+
+              @keyframes skeleton-loading {
+                0% {
+                  background-color: hsl(200, 20%, 70%);
+                }
+
+                100% {
+                  background-color: hsl(200, 20%, 95%);
+                }
+              }
+            }
+          }
+
+          & > .card-footer {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0px;
+
+            & > h2 {
+              font-size: 1.2rem;
+              font-weight: bold;
+              color: inherit;
+              text-align: center;
+            }
+
+            & > .rating-widget {
+              width: 100%;
+              height: auto;
+              display: flex;
+              flex-direction: row-reverse;
+              align-items: center;
+              justify-content: center;
+
+              & > input {
+                display: none;
+              }
+
+              & > label.enable-star {
+                color: $star-color;
+                transition: all 0.2s ease;
+                float: right;
+                cursor: pointer;
+              }
+
+              & > label.disable-star {
+                color: $star-color;
+                cursor: pointer;
+              }
+
+              @media screen and (min-width: 768px) {
+                & > input:not(:checked) ~ label:hover,
+                input:not(:checked) ~ label:hover ~ label {
+                  color: $star-active-color;
+                }
+              }
+
+              & > input:checked ~ label.enable-star {
+                color: $star-active-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
